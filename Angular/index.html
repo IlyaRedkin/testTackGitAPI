@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+	<script type="text/javascript" src="gitApi.js"></script>
+	<script type="text/javascript" src="dataService.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-app="myApp">			
+	<div ng-controller="gitApi">
+		<div class="inline">
+			<ul class="usersList">
+				<li class="cursor" ng-repeat="user in usersList" ng-click="setSelectedUser(user)">{{user.login}}</li>
+			</ul>
+		</div>
+		<div class="inline" ng-show="selectedUser">
+			<div class="item userName">User: {{selectedUser}}</div>
+				<div class="inline">
+					<div class="item">Repositories</div>
+					<ul class="userRepos">
+						<li class="cursor" ng-repeat="repository in userRepositories" ng-click="setSelectedRepository(repository)">{{repository.name}}</li>
+					</ul>
+				</div>
+		</div>
+		<div class="inline" ng-show="selectedRepository">
+			<div class="item userName">Repository: {{selectedRepository}}</div>
+				<div class="inline">
+					<div class="item">Contributors</div>
+					<ul class="userRepos">
+						<li class="cursor" ng-repeat="contributor in userContributors">
+							{{contributor.login}}
+						</li>
+					</ul>
+				</div>
+		</div>
+	</div>
+</body>
+</html>
