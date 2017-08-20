@@ -1,21 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import UserList from '../components/UserList';
 
-export default class Users extends Component
+export default class Users extends React.Component
 {
 
     render(){
         return (
             <div>
-                {
-                    !this.props.children ?
-                        (
-                            <UserList/>
-                        ) :
-                        (
-                            this.props.children
-                        )
-                }
+                <UserList/>
             </div>
         );
     }

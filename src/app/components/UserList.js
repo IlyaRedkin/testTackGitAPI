@@ -14,7 +14,7 @@ export default class UserList extends Component
         };
 
         axios
-            .get(`https://jsonplaceholder.typicode.com/users/`)
+            .get(`https://api.github.com/users?per_page=50`)
             .then((response) => {
                 let { data } = response;
 
@@ -25,16 +25,13 @@ export default class UserList extends Component
     }
 
     render(){
-        if(!this.state.users.length){
-            return null;
-        }
-
         let users = this.state.users.map((user, index) => {
             return <User key={index} {...user} />
         });
 
         return (
             <div>
+                <h1>Users list</h1>
                 {users}
             </div>
         );
