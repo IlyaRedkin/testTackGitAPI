@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router';
 
-export default class Menu extends Component
+export default class Menu extends React.Component
 {
     render()
     {
@@ -9,7 +9,7 @@ export default class Menu extends Component
             <nav className="navbar navbar-default">
                 <div className="container-fluid">
                     <div className="navbar-header">
-                        <Link to="/">{ this.props.brand }</Link>
+                        <Link to="/">Home</Link>
                     </div>
                     <div className="collapse navbar-collapse">
                         <ul className="nav navbar-nav">

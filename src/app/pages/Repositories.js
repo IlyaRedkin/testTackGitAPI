@@ -1,34 +1,38 @@
 import React, {Component} from 'react';
-import UserProfile from '../components/User';
 import axios from 'axios';
 
-export default class User extends Component {
+import Repository from '../components/Repository';
+
+export default class Repositories extends Component {
 
     constructor()
     {
         super(...arguments);
         this.state = {
-            user: null
+            repository: []
         };
 
-        axios.get(`https://jsonplaceholder.typicode.com/users/${this.props.params.userId}`)
+        axios
+            .get(`https://api.github.com/users/GoogleChrome/repos`)
             .then((response) => {
                 let { data } = response;
 
                 this.setState({
-                    user: data
+                    repository: data
                 });
             });
     }
 
     render() {
-        // if(this.state.user === null){
-        //     return null;
-        // }
+
+        let repos = this.state.repository.map((repositories, index) => {
+        return <Repository key={index} {...repositories} />
+        });
 
         return (
             <div>
-                {this.state.user && <UserProfile {...this.state.user} />}
+                <h1>Repositories list</h1>
+                {repos}
             </div>
         );
     }
