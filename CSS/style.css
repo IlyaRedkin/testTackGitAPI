@@ -1,69 +1,25 @@
-.main-bg{
-	background-color: #ccffdd;
-	display: flex;
-	box-sizing: border-box;
-	margin: 0px;
-	padding: 40px;
-	height: 100vh;
+body{
+	cursor: default;
 }
-.child1{
-	width: 50%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-}
-	.child11{
-		background-color: #ccdddd;
-		width: 100%;
-		height: 25%;
-		display: flex;
-	}
-		.child110{
-			display: flex;
-			justify-content: space-between;
-			width: 100%;
-		}
-			.child111{
-				display: flex;
-				background-color: #cc00dd;
-				position: relative;
-				width: 25%;
-				height: 0px;
-				padding-bottom: 25%;
-			}
-			
-	.child12{
-		background-color: #00dddd;
-		width: 100%;
-		height: 25%;
-		display: flex;
-	}
 
-.child2{
-	width: 50%;
-	height: 100%;
-	display: flex;
-	flex-direction: row;
+.usersList{
+	display: block;
+	width: 200px;
 }
-	.child21{
-		background-color: #aaaaff;
-		width: 50%;
-		height: 100%;
-	}
-	.child22{
-		background-color: #ffaaff;
-		width: 50%;
-		height: 100%;
-	}
-
-.text{
-	margin: auto;
-	font-size: 60px;
+.inline{
+	display: inline-block;
+	vertical-align: text-top;
+	margin: 10px;
+	border: 1px;
+	width: 250px;
+}
+.item{
+	font-size: 20px;
 	font-weight: bold;
 }
-
-.text_white{
-	padding-top: 35%;
-	color: white;
-	font-size: 45px;
+.userName{
+	font-size: 25px;
+}
+.cursor{
+	cursor: pointer;
 }
