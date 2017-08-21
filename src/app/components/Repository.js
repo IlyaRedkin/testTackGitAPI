@@ -7,7 +7,9 @@ export default class Repository extends React.Component
         return (
                 <ul>
                     <li>
-                        {this.props.name}
+                        <Link to={`/${this.props.owner.login}/${this.props.name}`}>
+                            {this.props.name}
+                        </Link>
                     </li>
                 </ul>
         );

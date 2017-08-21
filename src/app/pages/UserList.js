@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import axios from 'axios';
 
-import User from './User';
+import User from '../components/User';
 
-export default class UserList extends Component
+export default class UserList extends React.Component
 {
     constructor()
     {
@@ -31,7 +31,6 @@ export default class UserList extends Component
 
         return (
             <div>
-                <h1>Users list</h1>
                 {users}
             </div>
         );
